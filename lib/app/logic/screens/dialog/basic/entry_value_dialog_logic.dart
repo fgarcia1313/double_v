@@ -4,9 +4,12 @@ import 'package:get/get.dart';
 import '../../../../../utils/config/config_warning.dart';
 
 class EntryValueDialogLogic extends GetxController {
+  final TextEditingController textController = TextEditingController();
+
   final RxString text = "".obs;
   final RxBool validateValue = false.obs;
   final RxBool validateChange = false.obs;
+  final RxBool obscureText = true.obs;
   final RxBool save = false.obs;
 
   onTextChanged(String value) {
@@ -33,6 +36,10 @@ class EntryValueDialogLogic extends GetxController {
       save.value = true;
       Get.back();
     }
+  }
+
+  onObscureText() {
+    obscureText.value = !obscureText.value;
   }
 
   onCancel() {

@@ -10,15 +10,16 @@ import '../../widgets/scroll/scroll_basic.dart';
 import '../../widgets/text_field/text_field_basic.dart';
 import '../../widgets/text_field/text_field_decimal.dart';
 import '../../widgets/text_field/text_field_int.dart';
+import '../../widgets/text_field/text_field_password.dart';
 
 class EntryValueDialog {
   Future<Map> dialog({required String title, String typeEntry = 'B'}) async {
-    EntryValueDialogLogic controller = EntryValueDialogLogic();
+    EntryValueDialogLogic logic = EntryValueDialogLogic();
     await Get.dialog(
       Builder(
         builder: (context) {
           return GetBuilder<EntryValueDialogLogic>(
-            init: controller,
+            init: logic,
             builder: (_) {
               return Scaffold(
                 backgroundColor: cTransparent,
@@ -26,7 +27,7 @@ class EntryValueDialog {
                   filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                   child: GestureDetector(
                     behavior: HitTestBehavior.opaque,
-                    onTap: controller.onCancel,
+                    onTap: logic.onCancel,
                     child: GestureDetector(
                       onTap: () {},
                       child: AlertDialog(
@@ -47,28 +48,39 @@ class EntryValueDialog {
                                         if (typeEntry == 'D') {
                                           return Obx(() {
                                             return TextFieldDecimal(
-                                              controller: TextEditingController(),
+                                              controller: logic.textController,
                                               labelText: 'enter_value'.tr,
-                                              onChanged: controller.onTextChanged,
-                                              warning: controller.validateValue.value,
+                                              onChanged: logic.onTextChanged,
+                                              warning: logic.validateValue.value,
                                             );
                                           });
                                         } else if (typeEntry == 'I') {
                                           return Obx(() {
                                             return TextFieldInt(
-                                              controller: TextEditingController(),
+                                              controller: logic.textController,
                                               labelText: 'enter_value'.tr,
-                                              onChanged: controller.onTextChanged,
-                                              warning: controller.validateValue.value,
+                                              onChanged: logic.onTextChanged,
+                                              warning: logic.validateValue.value,
+                                            );
+                                          });
+                                        } else if (typeEntry == 'P') {
+                                          return Obx(() {
+                                            return TextFieldPassword(
+                                              controller: logic.textController,
+                                              obscureText: logic.obscureText.value,
+                                              labelText: 'password'.tr,
+                                              onChanged: logic.onTextChanged,
+                                              warning: logic.validateValue.value,
+                                              obscureAction: logic.onObscureText,
                                             );
                                           });
                                         }
                                         return Obx(() {
                                           return TextFieldBasic(
-                                            controller: TextEditingController(),
+                                            controller: logic.textController,
                                             labelText: 'enter_value'.tr,
-                                            onChanged: controller.onTextChanged,
-                                            warning: controller.validateValue.value,
+                                            onChanged: logic.onTextChanged,
+                                            warning: logic.validateValue.value,
                                           );
                                         });
                                       },
@@ -80,8 +92,8 @@ class EntryValueDialog {
                           ),
                         ),
                         actions: [
-                          ButtonIcon(icon: Icons.check_circle_outline, onPressed: controller.onSave, iconColor: cGreen),
-                          ButtonIcon(icon: Icons.highlight_off, onPressed: controller.onCancel, iconColor: cWarning),
+                          ButtonIcon(icon: Icons.check_circle_outline, onPressed: logic.onSave, iconColor: cGreen),
+                          ButtonIcon(icon: Icons.highlight_off, onPressed: logic.onCancel, iconColor: cWarning),
                         ],
                       ),
                     ),
@@ -94,6 +106,6 @@ class EntryValueDialog {
       ),
       barrierDismissible: true,
     );
-    return {'save': controller.save.value, 'text': controller.text.value};
+    return {'save': logic.save.value, 'text': logic.text.value};
   }
 }

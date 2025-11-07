@@ -12,6 +12,10 @@ import '../../../../screens/dialog/basic/confirm_dialog.dart';
 import '../../../../screens/dialog/basic/date_pick_dialog.dart';
 
 class CreateNewAccountDialogLogic extends GetxController {
+  late FirebaseApp _app;
+  late FirebaseAuth _auth;
+  late FirebaseFirestore _firestore;
+
   final TextEditingController nameController = TextEditingController();
   final TextEditingController surNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
@@ -29,10 +33,6 @@ class CreateNewAccountDialogLogic extends GetxController {
   final RxBool warningConfirmPassword = false.obs;
   final RxBool validateChange = false.obs;
   final RxBool load = false.obs;
-
-  late FirebaseApp _app;
-  late FirebaseAuth _auth;
-  late FirebaseFirestore _firestore;
 
   @override
   void onInit() async {
