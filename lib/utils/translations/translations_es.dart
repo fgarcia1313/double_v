@@ -1,5 +1,5 @@
 const Map<String, String> translationsEs = {
-  "address_removed": "Direccion eliminada",
+  "address_removed": "Dirección eliminada",
   "address_sent": "Dirección enviada",
   "address": "Dirección",
   "all_profiles": "Todos los perfiles",
@@ -29,6 +29,7 @@ const Map<String, String> translationsEs = {
   "error": "Error",
   "home": "Inicio",
   "incorrect_password": "Contraseña incorrecta",
+  "language": "Lenguaje",
   "light_mode": "Modo Claro",
   "loading": "Cargando...",
   "login": "Iniciar sesión",

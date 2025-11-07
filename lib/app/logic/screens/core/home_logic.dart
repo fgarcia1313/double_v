@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
-class HomeLogic extends GetxController {
+import '../../../../utils/global/global_routes.dart';
 
+class HomeLogic extends GetxController {
+  onRun() {
+    Get.toNamed(myProfileScreen);
+  }
 }

@@ -29,6 +29,7 @@ const Map<String, String> translationsFr = {
   "error": "Erreur",
   "home": "Accueil",
   "incorrect_password": "Mot de passe incorrect",
+  "language": "Langue",
   "light_mode": "Mode Clair",
   "loading": "Chargement...",
   "login": "Login",

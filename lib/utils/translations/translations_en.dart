@@ -28,6 +28,7 @@ const Map<String, String> translationsEn = {
   "error": "Error",
   "home": "Home",
   "incorrect_password": "Incorrect password",
+  "language": "Language",
   "light_mode": "Light Mode",
   "loading": "Loading...",
   "login": "Login",

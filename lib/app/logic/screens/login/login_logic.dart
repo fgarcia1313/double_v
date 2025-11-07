@@ -102,8 +102,6 @@ class LoginLogic extends GetxController {
       Get.offAllNamed(myProfileScreen);
     } else if (from.value == addressScreen) {
       Get.offAllNamed(addressScreen);
-    } else if (from.value == allProfilesScreen) {
-      Get.offAllNamed(allProfilesScreen);
     }
   }
 }

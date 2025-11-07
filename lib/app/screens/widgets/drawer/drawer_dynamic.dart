@@ -32,7 +32,6 @@ class DrawerDynamic extends StatelessWidget {
                 listTile(context: context, icon: Icons.home, text: 'home'.tr, scaffoldKey: scaffoldKey, onPressed: logic.onHomeScreen),
                 listTile(context: context, icon: Icons.account_circle, iconColor: cSYellow, text: 'my_profile'.tr, scaffoldKey: scaffoldKey, onPressed: logic.onMyProfileScreen),
                 listTile(context: context, icon: Icons.add_location, iconColor: cSYellow, text: 'address'.tr, scaffoldKey: scaffoldKey, onPressed: logic.onAddressScreen),
-                listTile(context: context, icon: Icons.groups, iconColor: cSOrange, text: 'all_profiles'.tr, scaffoldKey: scaffoldKey, onPressed: logic.onAllProfilesScreen),
                 Obx(() {
                   if (logic.isLoggedIn.value) {
                     return listTile(context: context, icon: Icons.logout, iconColor: cGreen, text: 'logout'.tr, scaffoldKey: scaffoldKey, onPressed: logic.onLogout);
@@ -46,6 +45,7 @@ class DrawerDynamic extends StatelessWidget {
                   scaffoldKey: scaffoldKey,
                   onPressed: logic.onDarkLight,
                 ),
+                listTile(context: context, icon: Icons.language, text: 'language'.tr, scaffoldKey: scaffoldKey, onPressed: logic.onLanguage),
               ],
             ),
           ),

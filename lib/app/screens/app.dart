@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
           darkTheme: themeDataDark,
           themeMode: logic.darkLight.value ? ThemeMode.light : ThemeMode.dark,
           translations: MyTranslations(),
-          locale: Get.deviceLocale,
+          locale: logic.currentLocale.value,
           fallbackLocale: const Locale('en'),
           initialRoute: splashScreen,
           onGenerateRoute: RouteGenerator.generateRoute,

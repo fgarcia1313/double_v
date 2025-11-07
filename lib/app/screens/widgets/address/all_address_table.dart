@@ -22,10 +22,7 @@ class AllAddressTable extends DataTableSource {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SvgPicture.network(
-                address.countryFlag,
-                width: 25,
-              ),
+              SvgPicture.network(address.countryFlag, width: 25),
               Padding(padding: const EdgeInsets.all(5), child: Text(address.country)),
             ],
           ),
