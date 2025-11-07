@@ -10,11 +10,11 @@ import '../../widgets/scroll/scroll_basic.dart';
 
 class ConfirmDialog {
   Future<bool> dialog({required String content}) async {
-    ConfirmDialogLogic controller = ConfirmDialogLogic();
+    ConfirmDialogLogic logic = ConfirmDialogLogic();
     await Get.dialog(
       Builder(builder: (context) {
         return GetBuilder<ConfirmDialogLogic>(
-            init: controller,
+            init: logic,
             builder: (_) {
               return Scaffold(
                 backgroundColor: cTransparent,
@@ -22,7 +22,7 @@ class ConfirmDialog {
                   filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                   child: GestureDetector(
                     behavior: HitTestBehavior.opaque,
-                    onTap: controller.onCancel,
+                    onTap: logic.onCancel,
                     child: GestureDetector(
                       onTap: () {},
                       child: AlertDialog(
@@ -48,12 +48,12 @@ class ConfirmDialog {
                         actions: [
                           ButtonIcon(
                             icon: Icons.check_circle_outline,
-                            onPressed: controller.onSave,
+                            onPressed: logic.onSave,
                             iconColor: cGreen,
                           ),
                           ButtonIcon(
                             icon: Icons.highlight_off,
-                            onPressed: controller.onCancel,
+                            onPressed: logic.onCancel,
                             iconColor: cWarning,
                           ),
                         ],
@@ -66,6 +66,6 @@ class ConfirmDialog {
       }),
       barrierDismissible: true,
     );
-    return controller.confirm.value;
+    return logic.confirm.value;
   }
 }

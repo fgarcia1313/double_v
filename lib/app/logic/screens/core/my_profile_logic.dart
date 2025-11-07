@@ -7,12 +7,9 @@ import 'package:get/get.dart';
 
 import '../../../../models/user_model.dart';
 import '../../../../utils/config/config_date.dart';
-import '../../../../utils/config/config_other.dart';
 import '../../../../utils/config/config_warning.dart';
-import '../../../../utils/global/global_routes.dart';
 import '../../../screens/dialog/basic/date_pick_dialog.dart';
 import '../../../screens/dialog/basic/entry_value_dialog.dart';
-import '../../../screens/dialog/login/create_new_account_dialog.dart';
 
 class MyProfileLogic extends GetxController {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -25,7 +22,6 @@ class MyProfileLogic extends GetxController {
   final RxBool warningName = false.obs;
   final RxBool warningSurName = false.obs;
   final RxBool warningDateBorn = false.obs;
-  final RxBool warningEmail = false.obs;
   final RxBool validateChange = true.obs;
 
   StreamSubscription<DocumentSnapshot<Map<String, dynamic>>>? _userSubscription;

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../utils/global/global_color.dart';
-import '../../../utils/global/global_image.dart';
 import '../../logic/screens/core/my_profile_logic.dart';
 import '../widgets/app_bar/app_bar_dynamic.dart';
 import '../widgets/button/button_basic.dart';

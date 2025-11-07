@@ -30,7 +30,7 @@ class EntryValueDialogLogic extends GetxController {
         'error'.tr,
         'enter_value'.tr,
         snackPosition: SnackPosition.BOTTOM,
-        margin: EdgeInsets.all(10),
+        margin: EdgeInsets.all(20),
       );
     } else {
       save.value = true;

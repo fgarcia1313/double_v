@@ -6,14 +6,12 @@ import '../../../../utils/global/global_color.dart';
 
 class ButtonCountry extends StatelessWidget {
   final String country;
-  final String code;
   final VoidCallback onPressed;
   final String image;
 
   const ButtonCountry({
     super.key,
     required this.country,
-    required this.code,
     required this.onPressed,
     required this.image,
   });
@@ -54,16 +52,6 @@ class ButtonCountry extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Center(
-                child: Text(
-                  code,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ),
             ),

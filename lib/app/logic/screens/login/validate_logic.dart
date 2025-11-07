@@ -49,16 +49,16 @@ class ValidateLogic extends GetxController {
     }
 
     if (error) {
-      Get.snackbar('error'.tr, 'an_error_occurred'.tr, snackPosition: SnackPosition.BOTTOM, margin: EdgeInsets.all(10));
+      Get.snackbar('error'.tr, 'an_error_occurred'.tr, snackPosition: SnackPosition.BOTTOM, margin: EdgeInsets.all(20));
     } else {
       bool? confirm = await ConfirmDialog().dialog(content: 'reset_password'.tr);
       if (confirm == true) {
         try {
           await _auth.confirmPasswordReset(code: oobCode, newPassword: password);
-          Get.snackbar('successful'.tr, 'password_reset_successfully'.tr, snackPosition: SnackPosition.BOTTOM, margin: EdgeInsets.all(10));
+          Get.snackbar('successful'.tr, 'password_reset_successfully'.tr, snackPosition: SnackPosition.BOTTOM, margin: EdgeInsets.all(20));
           Get.toNamed(splashScreen);
         } catch (e) {
-          Get.snackbar('error'.tr, 'unexpected_error'.trParams({'error_message': e.toString()}), snackPosition: SnackPosition.BOTTOM, margin: EdgeInsets.all(10));
+          Get.snackbar('error'.tr, 'unexpected_error'.trParams({'error_message': e.toString()}), snackPosition: SnackPosition.BOTTOM, margin: EdgeInsets.all(20));
         }
       }
     }

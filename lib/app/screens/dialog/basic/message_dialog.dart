@@ -10,11 +10,11 @@ import '../../widgets/scroll/scroll_basic.dart';
 
 class MessageDialog {
   Future dialog({required String content}) async {
-    MessageDialogLogic controller = MessageDialogLogic();
+    MessageDialogLogic logic = MessageDialogLogic();
     await Get.dialog(
       Builder(builder: (context) {
         return GetBuilder<MessageDialogLogic>(
-            init: controller,
+            init: logic,
             builder: (_) {
               return Scaffold(
                 backgroundColor: cTransparent,
@@ -22,7 +22,7 @@ class MessageDialog {
                   filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                   child: GestureDetector(
                     behavior: HitTestBehavior.opaque,
-                    onTap: controller.onCancel,
+                    onTap: logic.onCancel,
                     child: GestureDetector(
                       onTap: () {},
                       child: AlertDialog(
@@ -48,7 +48,7 @@ class MessageDialog {
                         actions: [
                           ButtonIcon(
                             icon: Icons.check_circle_outline,
-                            onPressed: controller.onCancel,
+                            onPressed: logic.onCancel,
                             iconColor: cGreen,
                           ),
                         ],

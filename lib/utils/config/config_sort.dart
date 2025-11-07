@@ -1,5 +1,6 @@
 import 'dart:collection';
 
+import '../../models/address_model.dart';
 import 'config_date.dart';
 import '/utils/validator/ValidatorString.dart';
 
@@ -275,4 +276,107 @@ class ConfigSort {
     return list;
   }
 
+  List<AddressModel> sortAddressItemsByCountryDescending(List<AddressModel> quoteItems) {
+    quoteItems.sort((a, b) {
+      try {
+        String nameA = a.country;
+        String nameB = b.country;
+        return nameB.compareTo(nameA);
+      } catch (e) {
+        return 0;
+      }
+    });
+    return quoteItems;
+  }
+
+  List<AddressModel> sortAddressItemsByCountryAscending(List<AddressModel> quoteItems) {
+    quoteItems.sort((a, b) {
+      try {
+        String nameA = a.country;
+        String nameB = b.country;
+        return nameA.compareTo(nameB);
+      } catch (e) {
+        return 0;
+      }
+    });
+    return quoteItems;
+  }
+
+  List<AddressModel> sortAddressItemsByStateDescending(List<AddressModel> quoteItems) {
+    quoteItems.sort((a, b) {
+      try {
+        String nameA = a.state;
+        String nameB = b.state;
+        return nameB.compareTo(nameA);
+      } catch (e) {
+        return 0;
+      }
+    });
+    return quoteItems;
+  }
+
+  List<AddressModel> sortAddressItemsByStateAscending(List<AddressModel> quoteItems) {
+    quoteItems.sort((a, b) {
+      try {
+        String nameA = a.state;
+        String nameB = b.state;
+        return nameA.compareTo(nameB);
+      } catch (e) {
+        return 0;
+      }
+    });
+    return quoteItems;
+  }
+
+  List<AddressModel> sortAddressItemsByCityDescending(List<AddressModel> quoteItems) {
+    quoteItems.sort((a, b) {
+      try {
+        String nameA = a.city;
+        String nameB = b.city;
+        return nameB.compareTo(nameA);
+      } catch (e) {
+        return 0;
+      }
+    });
+    return quoteItems;
+  }
+
+  List<AddressModel> sortAddressItemsByCityAscending(List<AddressModel> quoteItems) {
+    quoteItems.sort((a, b) {
+      try {
+        String nameA = a.city;
+        String nameB = b.city;
+        return nameA.compareTo(nameB);
+      } catch (e) {
+        return 0;
+      }
+    });
+    return quoteItems;
+  }
+
+  List<AddressModel> sortAddressItemsByDateDescending(List<AddressModel> quoteItems) {
+    quoteItems.sort((a, b) {
+      try {
+        DateTime dateA = _configDate.stringToDate(a.create);
+        DateTime dateB = _configDate.stringToDate(b.create);
+        return dateB.compareTo(dateA);
+      } catch (e) {
+        return 0;
+      }
+    });
+    return quoteItems;
+  }
+
+  List<AddressModel> sortAddressItemsByDateAscending(List<AddressModel> quoteItems) {
+    quoteItems.sort((a, b) {
+      try {
+        DateTime dateA = _configDate.stringToDate(a.create);
+        DateTime dateB = _configDate.stringToDate(b.create);
+        return dateA.compareTo(dateB);
+      } catch (e) {
+        return 0;
+      }
+    });
+    return quoteItems;
+  }
 }
