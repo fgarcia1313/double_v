@@ -24,7 +24,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       key: scaffoldKey,
       drawer: DrawerDynamic(scaffoldKey: scaffoldKey),
-      appBar: AppBarDynamic(title: 'my_profile'.tr, onPressedDrawer: () => scaffoldKey.currentState!.openDrawer()),
+      appBar: AppBarDynamic(title: 'login'.tr, onPressedDrawer: () => scaffoldKey.currentState!.openDrawer()),
       body: LayoutBuilder(
         builder: (BuildContext _, BoxConstraints constraints) {
           return SizedBox(

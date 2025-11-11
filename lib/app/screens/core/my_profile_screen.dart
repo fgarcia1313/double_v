@@ -73,7 +73,9 @@ class MyProfileScreen extends StatelessWidget {
                               width: 250,
                               child: ButtonBasic(text: 'born'.tr, onPressed: logic.onPickDateBorn),
                             ),
-                            Text('birthdate'.trParams({'date': logic.userModel.value.born})),
+                            Obx(() {
+                              return Text('birthdate'.trParams({'date': logic.userModel.value.born}));
+                            }),
                           ],
                         ),
                       ),
